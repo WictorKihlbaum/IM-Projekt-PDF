@@ -29,6 +29,9 @@ namespace loginuser.cs
             FormTesting.ValidateAveragePointFields();
             FormTesting.ValidateTeamPointFields();
             FormTesting.ValidateStoredFiles();
+
+            StoredFilesTesting.ValidateUserAccess();
+            StoredFilesTesting.ValidatePublishableFiles();
         }
     }
 }

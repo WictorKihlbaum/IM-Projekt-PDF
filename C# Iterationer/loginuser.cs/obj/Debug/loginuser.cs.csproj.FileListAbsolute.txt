@@ -42,8 +42,6 @@ C:\Users\Wictor\Desktop\C# Iterationer\loginuser.cs\obj\Debug\loginuser.cs.pdb
 C:\Users\Wictor\Desktop\C# Iterationer\loginuser.cs\bin\Debug\loginuser.cs.exe
 C:\Users\Wictor\Desktop\C# Iterationer\loginuser.cs\bin\Debug\loginuser.cs.pdb
 C:\Users\Wictor\Desktop\C# Iterationer\loginuser.cs\obj\Debug\loginuser.cs.csprojResolveAssemblyReference.cache
-C:\Users\Wictor\Desktop\C# Iterationer\loginuser.cs\obj\Debug\loginuser.cs.Form1.resources
-C:\Users\Wictor\Desktop\C# Iterationer\loginuser.cs\obj\Debug\loginuser.cs.csproj.GenerateResource.Cache
 C:\Users\wk222as\Desktop\C# Iterationer\loginuser.cs\bin\Debug\loginuser.cs.exe.config
 C:\Users\wk222as\Desktop\C# Iterationer\loginuser.cs\obj\Debug\loginuser.cs.exe
 C:\Users\wk222as\Desktop\C# Iterationer\loginuser.cs\obj\Debug\loginuser.cs.pdb

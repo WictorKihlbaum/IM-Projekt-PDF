@@ -9,6 +9,7 @@ namespace loginuser.cs
     public class StoredFiles
     {
         private int files;
+        private int filesToPublish;
 
         public int Files
         {
@@ -20,16 +21,34 @@ namespace loginuser.cs
             {
                 if (value > 100000)
                 {
-                    throw new ArgumentException("Systemets utrymme överbelastat! Filen lagrades inte.\n");
+                    throw new ArgumentException("Systemets utrymme överbelastat! Dokumentet lagrades inte.\n");
                 }
 
                 files = value;
             }
         }
 
-        public StoredFiles(int files)
+        public int FilesToPublish
+        {
+            get
+            {
+                return filesToPublish;
+            }
+            set
+            {
+                if (value == 0)
+                {
+                    throw new ArgumentException("Det finns inga lagrade dokument i systemet att publicera.");
+                }
+
+                filesToPublish = value;
+            }
+        }
+
+        public StoredFiles(int files, int filesToPublish)
         {
             Files = files;
+            FilesToPublish = filesToPublish;
         }
 
         public StoredFiles(){}
