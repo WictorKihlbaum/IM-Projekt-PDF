@@ -23,6 +23,12 @@ namespace loginuser.cs
             ApplicationTesting.ValidateGymnastAge();
             ApplicationTesting.ValidateGymnastGender();
             ApplicationTesting.ValidateForm();
+
+            FormTesting.ValidateUserAccess();
+            FormTesting.ValidateGivenPoint();
+            FormTesting.ValidateAveragePointFields();
+            FormTesting.ValidateTeamPointFields();
+            FormTesting.ValidateStoredFiles();
         }
     }
 }
