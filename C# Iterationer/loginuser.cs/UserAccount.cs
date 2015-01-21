@@ -9,6 +9,7 @@ namespace loginuser.cs
     public class UserAccount
     {
         private bool logged;
+        private bool authority;
         
         public bool Logged
         {
@@ -27,9 +28,27 @@ namespace loginuser.cs
             }
         }
 
-        public UserAccount(bool logged)
+        public bool Authority
+        {
+            get
+            {
+                return authority;
+            }
+            set
+            {
+                if (value == false)
+                {
+                    throw new ArgumentException("Publicering misslyckades. Du har ej auktoritet att publicera (detta) dokument.\n");
+                }
+
+                authority = value;
+            }
+        }
+
+        public UserAccount(bool logged, bool authority)
         {
             Logged = logged;
+            Authority = authority;
         }
 
         public UserAccount(){}

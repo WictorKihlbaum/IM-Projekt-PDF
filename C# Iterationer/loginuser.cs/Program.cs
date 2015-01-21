@@ -32,6 +32,8 @@ namespace loginuser.cs
 
             StoredFilesTesting.ValidateUserAccess();
             StoredFilesTesting.ValidatePublishableFiles();
+            StoredFilesTesting.ValidateMarkedPublishableFiles();
+            StoredFilesTesting.ValidateUserAuthority();
         }
     }
 }

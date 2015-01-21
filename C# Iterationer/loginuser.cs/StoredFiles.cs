@@ -10,6 +10,7 @@ namespace loginuser.cs
     {
         private int files;
         private int filesToPublish;
+        private int markedFiles;
 
         public int Files
         {
@@ -45,10 +46,32 @@ namespace loginuser.cs
             }
         }
 
-        public StoredFiles(int files, int filesToPublish)
+        public int MarkedFiles
+        {
+            get
+            {
+                return markedFiles;
+            }
+            set
+            {
+                if (value == 0)
+                {
+                    throw new ArgumentException("Publicering ej möjlig. Var god markera ett dokument.");
+                }
+                else if (value > 1)
+                {
+                    throw new ArgumentException("Publicering ej möjlig. Du kan endast publicera ett dokument åt gången.");
+                }
+
+                markedFiles = value;
+            }
+        }
+
+        public StoredFiles(int files, int filesToPublish, int markedFiles)
         {
             Files = files;
             FilesToPublish = filesToPublish;
+            MarkedFiles = markedFiles;
         }
 
         public StoredFiles(){}

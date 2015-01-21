@@ -46,7 +46,7 @@ namespace loginuser.cs
 
         public static void InitiateFunction()
         {
-            Console.WriteLine("\tFunktion initieras.");
+            Console.WriteLine("\tFunktion för publicering initieras.");
         }
 
         public static void ValidatePublishableFiles()
@@ -60,7 +60,97 @@ namespace loginuser.cs
                 int files = 5;
                 storedFiles.FilesToPublish = files;
 
-                Console.WriteLine("Det finns {0} dokument att publicera.", files);
+                SetColor("Validering OK. Det finns " + files + " möjliga dokument att publicera.", true);
+            }
+            catch (ArgumentException error)
+            {
+                SetColor(error.Message, false);
+            }
+
+            Console.Write("Test 2: ");
+            try
+            {
+                int files = 0;
+                storedFiles.FilesToPublish = files;
+
+                SetColor("ValidatePublishableFiles misslyckades", false);
+            }
+            catch (ArgumentException error)
+            {
+                SetColor(error.Message, false);
+            }
+        }
+
+        public static void ValidateMarkedPublishableFiles()
+        {
+            SetTopicColor("\nValiderar mängden markerade publicerbara dokument.\n");
+            var storedFiles = new StoredFiles();
+
+            Console.Write("Test 1: ");
+            try
+            {
+                int marked = 1;
+                storedFiles.MarkedFiles = marked;
+
+                SetColor("Validering OK. " + marked + " dokument är markerat. Publicering kan fortgå.", true);
+            }
+            catch (ArgumentException error)
+            {
+                SetColor(error.Message, false);
+            }
+
+            Console.Write("Test 2: ");
+            try
+            {
+                int marked = 0;
+                storedFiles.MarkedFiles = marked;
+
+                SetColor("ValidateMarkedPublishableFiles misslyckades", false);
+            }
+            catch (ArgumentException error)
+            {
+                SetColor(error.Message, false);
+            }
+
+            Console.Write("Test 3: ");
+            try
+            {
+                int marked = 3;
+                storedFiles.MarkedFiles = marked;
+
+                SetColor("ValidateMarkedPublishableFiles misslyckades", false);
+            }
+            catch (ArgumentException error)
+            {
+                SetColor(error.Message, false);
+            }
+        }
+
+        public static void ValidateUserAuthority()
+        {
+            SetTopicColor("\nValiderar huruvida användaren har auktoritet att publicera dokument.\n");
+            var userAccount = new UserAccount();
+
+            Console.Write("Test 1: ");
+            try
+            {
+                bool allowable = true;
+                userAccount.Authority = allowable;
+
+                SetColor("Auktoritet OK. Publicering lyckades.", true);
+            }
+            catch (ArgumentException error)
+            {
+                SetColor(error.Message, false);
+            }
+
+            Console.Write("Test 2: ");
+            try
+            {
+                bool unallowable = false;
+                userAccount.Authority = unallowable;
+
+                SetColor("ValidateAuthority misslyckades", false);
             }
             catch (ArgumentException error)
             {
